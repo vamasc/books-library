@@ -40,7 +40,8 @@ public class ReaderFile {
             System.out.print(ConsoleColor.RED_BOLD_BRIGHT);
             System.out.println("Відсутня інформація.");
         }
-
         System.out.println("\n");
     }
+
+
 }

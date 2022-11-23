@@ -45,7 +45,7 @@ public class Menu {
             }
 
             switch (command) {
-                case 1: {
+                case 1 -> {
                     //Якщо є файли
                     if (Book.showListOfBooks()) {
                         ReaderFile fileReader = new Book();
@@ -55,7 +55,7 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 2: {
+                case 2 -> {
                     //Якщо є файли
                     if (GeneralInformation.showListOfGeneralInformation()) {
                         ReaderFile fileReader = new GeneralInformation();
@@ -65,14 +65,7 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                //*               case 3: {
-                //                  Desktop.getDesktop().browse(new URI("https://www.oracle.com/java/technologies/"));
-                //                   System.out.print(ConsoleColor.GREEN_BOLD_BRIGHT);
-                //                    System.out.println("Сайт для завантаження Java відкритий у вашому браузері\n");
-                //                    backToMenu();
-                //                   continue;
-                //               }
-                case 3: {
+                case 3 -> {
                     /*
                      * Перевірка на те, чи є файли у одному з списків.
                      * Якщо списки пусті то методи повертають false
@@ -84,7 +77,7 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 4: {
+                case 4 -> {
                     Book.makeListOfBooks();
                     GeneralInformation.makeListOfGeneralInformation();
 
@@ -93,19 +86,19 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 5: {
+                case 5 -> {
                     ReaderFile fileReader = new Certificate();
                     fileReader.readFile(Certificate.getFile());
 
                     backToMenu();
                     continue;
                 }
-                case 0: {
+                case 0 -> {
                     System.out.print(ConsoleColor.GREEN_BOLD_BRIGHT);
                     System.out.println("Допобачення");
                     System.exit(0);
                 }
-                default: {
+                default -> {
                     System.out.print(ConsoleColor.RED_BOLD_BRIGHT);
                     System.out.println("Помилка! Не правильно введена команда. Спробуйте ще раз.\n");
                 }
@@ -118,7 +111,7 @@ public class Menu {
      *
      * @throws IOException виняток
      */
-    private static void backToMenu() throws IOException {
+    public static void backToMenu() throws IOException {
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         do {
