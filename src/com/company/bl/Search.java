@@ -1,11 +1,12 @@
 package com.company.bl;
 
 import com.company.Interface.ConsoleColor;
-import com.company.dao.GeneralInformation;
 import com.company.dao.Book;
 import com.company.dao.ReaderFile;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Клас, у якому реалізований пошук
@@ -36,20 +37,6 @@ public class Search {
             }
         }
 
-        for (File file : GeneralInformation.getListOfGeneralInformation()) {
-
-            forComparison = file.getName().substring(3, (file.getName().length() - 4));
-
-            if (enteredFile.equals(forComparison)) {
-                System.out.print(ConsoleColor.CYAN_BOLD_BRIGHT);
-                System.out.println("\nФайл знайдений\n");
-                ReaderFile readerFile = new GeneralInformation();
-                readerFile.readFile(file);
-                return;
-            }
-        }
-        System.out.print(ConsoleColor.RED_BOLD_BRIGHT);
-        System.out.println("\nФайл не знайдений\n");
     }
 
     /**

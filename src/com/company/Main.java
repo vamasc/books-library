@@ -2,7 +2,6 @@ package com.company;
 
 import com.company.Interface.ConsoleColor;
 import com.company.Interface.Menu;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 

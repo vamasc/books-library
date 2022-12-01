@@ -1,8 +1,10 @@
 package com.company.Interface;
 
-import com.company.bl.Search;
-import com.company.dao.*;
-
+import com.company.dao.AuthorMode;
+import com.company.dao.Book;
+import com.company.dao.Certificate;
+import com.company.dao.GeneralInformation;
+import com.company.dao.ReaderFile;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,9 +31,9 @@ public class Menu {
             System.out.print(ConsoleColor.BLUE_BOLD_BRIGHT);
             System.out.print("1 - Список книг\n" +
                     "2 - Загальна інформація про Бібліотек книг\n" +
-                    "3 - Пошук\n" +
-                    "4 - Режим автора\n" +
-                    "5 - Довідка\n" +
+//                    "3 - Пошук\n" +
+                    "3 - Режим автора\n" +
+                    "4 - Довідка\n" +
                     "0 - Вийти з програми\n" + ConsoleColor.PURPLE_BOLD_BRIGHT +
                     "Команда: ");
 
@@ -65,11 +67,11 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 3 -> {
+/*                case 3 -> {
                     /*
                      * Перевірка на те, чи є файли у одному з списків.
                      * Якщо списки пусті то методи повертають false
-                     */
+                     *
                     if (Book.makeListOfBooks() | GeneralInformation.makeListOfGeneralInformation()) {
                         Search.find();
                     }
@@ -77,7 +79,8 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 4 -> {
+*/
+                case 3 -> {
                     Book.makeListOfBooks();
                     GeneralInformation.makeListOfGeneralInformation();
 
@@ -86,7 +89,7 @@ public class Menu {
                     backToMenu();
                     continue;
                 }
-                case 5 -> {
+                case 4 -> {
                     ReaderFile fileReader = new Certificate();
                     fileReader.readFile(Certificate.getFile());
 
